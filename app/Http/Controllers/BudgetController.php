@@ -12,7 +12,7 @@ class BudgetController extends Controller
      */
     public function index()
     {
-        $budgets = Budget::with('user')->paginate(7);
+        $budgets = Budget::with('user')->latest()->paginate(7);
         return view('budget.index', [
             'budgets' => $budgets
         ]);
@@ -31,7 +31,13 @@ class BudgetController extends Controller
      */
     public function store(Request $request)
     {
-        dd($_SERVER['REQUEST_METHOD']);
+        $data = $request->validate([
+            'source' => ['required'],
+            'amount' => ['required']
+        ]);
+        $data['user_id'] = 1;
+        Budget::create($data);
+        return redirect('/budgets');
     }
 
     /**
@@ -49,7 +55,9 @@ class BudgetController extends Controller
      */
     public function edit(Budget $budget)
     {
-        //
+        return view('budget.edit', [
+            'budget' => $budget
+        ]);
     }
 
     /**

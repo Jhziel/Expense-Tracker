@@ -12,6 +12,7 @@ Route::get('/', function () {
 Route::get('/budgets', [BudgetController::class, 'index']);
 Route::get('/budgets/create', [BudgetController::class, 'create']);
 Route::get('/budgets/{budget}', [BudgetController::class, 'show']);
+Route::get('/budgets/{budget}/edit', [BudgetController::class, 'edit']);
 Route::post('/budgets', [BudgetController::class, 'store']);
 
 Route::get('/expenses', function () {

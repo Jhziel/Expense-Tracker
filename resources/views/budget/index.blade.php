@@ -39,7 +39,7 @@
                             {{ $budget->amount }}
                         </td>
                         <td class="px-6 py-4 bg-neutral-secondary-soft">
-                            <a href="/budgets/{{ $budget->id }}" class="bg-blue-500 py-2 px-2 text-white">Edit</a>
+                            <a href="/budgets/{{ $budget->id }}/edit" class="bg-blue-500 py-2 px-2 text-white">Edit</a>
                         </td>
 
                     </tr>

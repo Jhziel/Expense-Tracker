@@ -10,7 +10,7 @@ class Budget extends Model
     /** @use HasFactory<\Database\Factories\BudgetFactory> */
     use HasFactory;
 
-    protected $fillable = ['source', 'amount'];
+    protected $fillable = ['user_id','source', 'amount'];
 
     public function user()
     {

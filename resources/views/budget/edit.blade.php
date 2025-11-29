@@ -1,6 +1,6 @@
 <x-layout>
     Update Info
-    <form action="/budgets" method="POST">
+    <form action="/budgets/{{$budget->id}}" method="POST">
         @csrf
         @method('PUT')
         <div class="my-2">

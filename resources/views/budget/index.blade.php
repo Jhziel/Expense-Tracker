@@ -39,7 +39,18 @@
                             {{ $budget->amount }}
                         </td>
                         <td class="px-6 py-4 bg-neutral-secondary-soft">
-                            <a href="/budgets/{{ $budget->id }}/edit" class="bg-blue-500 py-2 px-2 text-white">Edit</a>
+                            <div class="flex gap-3">
+
+                                <a href="/budgets/{{ $budget->id }}/edit"
+                                    class="bg-blue-500 py-2 px-2 text-white">Edit</a>
+                                <form action="/budgets/{{ $budget->id }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit"
+                                        class="bg-red-500 py-2 px-2 text-white cursor-pointer">delete</button>
+                                </form>
+                            </div>
                         </td>
 
                     </tr>

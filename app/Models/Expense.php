@@ -9,7 +9,7 @@ class Expense extends Model
 {
     /** @use HasFactory<\Database\Factories\ExpenseFactory> */
     use HasFactory;
-    protected $fillable = ['name', 'amount'];
+    protected $fillable = ['user_id', 'name', 'amount'];
 
     public function user()
     {

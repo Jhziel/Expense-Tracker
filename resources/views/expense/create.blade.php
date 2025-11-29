@@ -1,11 +1,11 @@
 <x-layout>
-    <form action="/budgets" method="POST">
+    <form action="/expenses" method="POST">
         @csrf
         <div class="my-2">
-            <label for="source">Source of Budget:</label>
-            <input class="border border-gray-400 rounded-2xl py-2 px-2" type="text" name="source" id="source">
+            <label for="source">Name of Expense:</label>
+            <input class="border border-gray-400 rounded-2xl py-2 px-2" type="text" name="name" id="name">
 
-            @error('source')
+            @error('name')
                 <p class="text-red-500 text-md mt-1 font-medium">{{ $message }}</p>
             @enderror
         </div>

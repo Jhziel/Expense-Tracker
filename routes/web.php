@@ -18,4 +18,7 @@ Route::delete('/budgets/{budget}', [BudgetController::class, 'destroy']);
 
 Route::get('/expenses', [ExpenseController::class, 'index']);
 Route::get('/expenses/create', [ExpenseController::class, 'create']);
+Route::get('/expenses/{expense}/edit', [ExpenseController::class, 'edit']);
 Route::post('/expenses', [ExpenseController::class, 'store']);
+Route::put('/expenses/{expense}', [ExpenseController::class, 'update']);
+Route::delete('/expenses/{expense}', [ExpenseController::class, 'destroy']);

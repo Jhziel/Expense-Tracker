@@ -55,7 +55,9 @@ class ExpenseController extends Controller
      */
     public function edit(Expense $expense)
     {
-        //
+        return view('expense.edit', [
+            'expense' => $expense
+        ]);
     }
 
     /**
@@ -63,7 +65,13 @@ class ExpenseController extends Controller
      */
     public function update(Request $request, Expense $expense)
     {
-        //
+        $data = $request->validate([
+            'name' => ['required'],
+            'amount' => ['required']
+        ]);
+
+        $expense->update($data);
+        return redirect('/expenses');
     }
 
     /**
@@ -71,6 +79,7 @@ class ExpenseController extends Controller
      */
     public function destroy(Expense $expense)
     {
-        //
+        $expense->delete();
+        return redirect('/expenses');
     }
 }

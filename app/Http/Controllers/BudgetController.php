@@ -65,7 +65,13 @@ class BudgetController extends Controller
      */
     public function update(Request $request, Budget $budget)
     {
-        //
+        $data = $request->validate([
+            'source' => ['required'],
+            'amount' => ['required']
+        ]);
+
+        $budget->update($data);
+        return redirect('/budgets');
     }
 
     /**
@@ -73,6 +79,7 @@ class BudgetController extends Controller
      */
     public function destroy(Budget $budget)
     {
-        //
+        $budget->delete();
+        return redirect('/budgets');
     }
 }

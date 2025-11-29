@@ -12,7 +12,10 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        //
+        $expenses = Expense::with('user')->latest()->paginate(7);
+        return view('expense.index', [
+            'expenses' => $expenses
+        ]);
     }
 
     /**
@@ -20,7 +23,7 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        //
+        return view('expense.create');
     }
 
     /**
@@ -28,7 +31,15 @@ class ExpenseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => ['required'],
+            'amount' => ['required']
+        ]);
+
+        $data['user_id'] = 1;
+        Expense::create($data);
+
+        return redirect('/expenses');
     }
 
     /**

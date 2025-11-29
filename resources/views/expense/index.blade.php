@@ -1,6 +1,9 @@
 <x-layout>
 
-
+    <div class="flex justify-between items-center ">
+        <h2 class="text-4xl font-bold my-4">This is your Expense</h2>
+        <a href="/expenses/create" class="py-2 px-2 bg-slate-900 text-white">Add new Expense</a>
+    </div>
     <div class="relative overflow-x-auto bg-neutral-primary shadow-xs rounded-base border border-default">
         <table class="w-full text-sm text-left rtl:text-right text-body">
             <thead class="text-sm text-body border-b border-default">
@@ -35,7 +38,8 @@
                             {{ $expense->amount }}
                         </td>
                         <td class="px-6 py-4 bg-neutral-secondary-soft">
-                            <a href="/expense/{{ $expense['id'] }}" class="bg-blue-500 py-2 px-2 text-white">Edit</a>
+                            <a href="/expenses/{{ $expense->id }}/edit"
+                                class="bg-blue-500 py-2 px-2 text-white">Edit</a>
                         </td>
 
                     </tr>

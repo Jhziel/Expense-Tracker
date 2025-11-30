@@ -66,7 +66,7 @@ class ExpenseController extends Controller
     public function update(Request $request, Expense $expense)
     {
         $data = $request->validate([
-            'name' => ['required'],
+            'name' => ['required','min:3'],
             'amount' => ['required']
         ]);
 

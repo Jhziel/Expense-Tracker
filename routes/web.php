@@ -1,17 +1,17 @@
 <?php
 
 use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\LoginUserController;
 use App\Http\Controllers\RegisterUserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('dashboard');
-});
 
 Route::middleware('auth')->group(function () {
     Route::controller(BudgetController::class)->group(function () {
+
+        Route::get('/', [DashboardController::class, 'index']);
 
         Route::get('/budgets',  'index');
         Route::get('/budgets/create',  'create');

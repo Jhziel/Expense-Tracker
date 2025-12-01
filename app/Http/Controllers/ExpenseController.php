@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Expense;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ExpenseController extends Controller
 {
@@ -12,7 +13,7 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        $expenses = Expense::with('user')->latest()->paginate(7);
+        $expenses = Expense::where('user_id', auth()->id())->latest()->paginate(7);
         return view('expense.index', [
             'expenses' => $expenses
         ]);
@@ -33,11 +34,11 @@ class ExpenseController extends Controller
     {
         $data = $request->validate([
             'name' => ['required'],
-            'amount' => ['required']
+            'amount' => ['required', 'numeric']
         ]);
 
-        $data['user_id'] = 1;
-        Expense::create($data);
+        $data['user_id'] = Auth::user()->id;
+    Expense::create($data);
 
         return redirect('/expenses');
     }
@@ -66,8 +67,8 @@ class ExpenseController extends Controller
     public function update(Request $request, Expense $expense)
     {
         $data = $request->validate([
-            'name' => ['required'],
-            'amount' => ['required']
+            'name' => ['required', 'min:3'],
+            'amount' => ['required', 'numeric']
         ]);
 
         $expense->update($data);

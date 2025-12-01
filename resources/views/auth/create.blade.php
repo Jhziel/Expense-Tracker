@@ -7,14 +7,18 @@
                 </a>
             </div>
 
-            <form action="/login" method="POST">
+            <form action="/register" method="POST">
                 @csrf
                 <div class="space-y-6">
-
+                    <div>
+                        <x-form-label>Full Name</x-form-label>
+                        <x-form-input name="name" type="text" placeholder="Enter Full name" />
+                        <x-input-error :messages="$errors->get('name')" />
+                    </div>
 
                     <div>
-                        <x-form-label>Email</x-form-label>
-                        <x-form-input name="email" type="text" placeholder="Enter email" :value="old('email')" />
+                        <x-form-label>Email Id</x-form-label>
+                        <x-form-input name="email" type="text" placeholder="Enter email" />
                         <x-input-error :messages="$errors->get('email')" />
                     </div>
 
@@ -24,25 +28,24 @@
                         <x-input-error :messages="$errors->get('password')" />
                     </div>
 
+                    <div>
+                        <x-form-label>Confirm Password</x-form-label>
+                        <x-form-input name="password_confirmation" type="password"
+                            placeholder="Enter confirm password" />
+                        <x-input-error :messages="$errors->get('password_confirmation')" />
+                    </div>
                 </div>
 
                 <div class="mt-12">
                     <button type="submit"
                         class="w-full py-3 px-4 text-sm tracking-wider font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none cursor-pointer">
-                        Login
+                        Create an account
                     </button>
                 </div>
-
+                <p class="text-slate-600 text-sm mt-6 text-center">Already have an account? <a
+                        href="javascript:void(0);" class="text-blue-600 font-medium hover:underline ml-1">Login here</a>
+                </p>
             </form>
-            <p class="text-slate-600 text-sm mt-6 text-center">Don't have an account? <a href="/register"
-                    class="text-blue-600 font-medium hover:underline ml-1">Signup here</a>
-            </p>
         </div>
     </div>
-
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> d840988da2afd9ac1aa4d6f9f12b2aae50c2a9b0
 </x-layout.guest-layout>

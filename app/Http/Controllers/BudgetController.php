@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Budget;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BudgetController extends Controller
 {
@@ -12,7 +13,7 @@ class BudgetController extends Controller
      */
     public function index()
     {
-        $budgets = Budget::with('user')->latest()->paginate(7);
+        $budgets = Budget::where('user_id', auth()->id())->latest()->paginate(7);
         return view('budget.index', [
             'budgets' => $budgets
         ]);
@@ -33,9 +34,9 @@ class BudgetController extends Controller
     {
         $data = $request->validate([
             'source' => ['required'],
-            'amount' => ['required']
+            'amount' => ['required', 'numeric']
         ]);
-        $data['user_id'] = 1;
+        $data['user_id'] = Auth::user()->id;
         Budget::create($data);
         return redirect('/budgets');
     }
@@ -67,7 +68,7 @@ class BudgetController extends Controller
     {
         $data = $request->validate([
             'source' => ['required'],
-            'amount' => ['required']
+            'amount' => ['required', 'numeric']
         ]);
 
         $budget->update($data);

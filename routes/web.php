@@ -22,17 +22,18 @@ Route::middleware('auth')->group(function () {
         Route::delete('/budgets/{budget}',  'destroy');
     });
 
+    Route::get('/expenses', [ExpenseController::class, 'index']);
+    Route::get('/expenses/create', [ExpenseController::class, 'create']);
+    Route::get('/expenses/{expense}/edit', [ExpenseController::class, 'edit'])->middleware('can:edit-expense,expense');
+    Route::post('/expenses', [ExpenseController::class, 'store']);
+    Route::put('/expenses/{expense}', [ExpenseController::class, 'update']);
+    Route::delete('/expenses/{expense}', [ExpenseController::class, 'destroy'])->middleware('can:delete-expense,expense');
+
     Route::post('/logout', [LoginUserController::class, 'destroy']);
 });
 
 
 
-Route::get('/expenses', [ExpenseController::class, 'index']);
-Route::get('/expenses/create', [ExpenseController::class, 'create']);
-Route::get('/expenses/{expense}/edit', [ExpenseController::class, 'edit']);
-Route::post('/expenses', [ExpenseController::class, 'store']);
-Route::put('/expenses/{expense}', [ExpenseController::class, 'update']);
-Route::delete('/expenses/{expense}', [ExpenseController::class, 'destroy']);
 
 Route::middleware('guest')->group(function () {
 

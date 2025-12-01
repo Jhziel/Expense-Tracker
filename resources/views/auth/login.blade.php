@@ -40,5 +40,9 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> d840988da2afd9ac1aa4d6f9f12b2aae50c2a9b0
 </x-layout.guest-layout>

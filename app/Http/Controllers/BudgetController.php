@@ -34,7 +34,7 @@ class BudgetController extends Controller
     {
         $data = $request->validate([
             'source' => ['required'],
-            'amount' => ['required']
+            'amount' => ['required', 'numeric']
         ]);
         $data['user_id'] = Auth::user()->id;
         Budget::create($data);
@@ -68,7 +68,7 @@ class BudgetController extends Controller
     {
         $data = $request->validate([
             'source' => ['required'],
-            'amount' => ['required']
+            'amount' => ['required', 'numeric']
         ]);
 
         $budget->update($data);

@@ -6,8 +6,8 @@
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-sm font-medium text-gray-600">Total Revenue</p>
-                    <p class="text-3xl font-bold text-gray-900 mt-2">$48,291</p>
+                    <p class="text-sm font-medium text-gray-600">Current Budget</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">₱48,291</p>
                     <div class="flex items-center mt-2">
                         <span class="text-green-600 text-sm font-medium flex items-center">
                             <i class="fas fa-arrow-up mr-1"></i>
@@ -26,8 +26,8 @@
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-sm font-medium text-gray-600">Total Users</p>
-                    <p class="text-3xl font-bold text-gray-900 mt-2">15,847</p>
+                    <p class="text-sm font-medium text-gray-600">Total Budgets</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">₱48,291</p>
                     <div class="flex items-center mt-2">
                         <span class="text-green-600 text-sm font-medium flex items-center">
                             <i class="fas fa-arrow-up mr-1"></i>
@@ -46,8 +46,8 @@
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-sm font-medium text-gray-600">Total Orders</p>
-                    <p class="text-3xl font-bold text-gray-900 mt-2">2,847</p>
+                    <p class="text-sm font-medium text-gray-600">Total Expenses</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">₱48,291</p>
                     <div class="flex items-center mt-2">
                         <span class="text-green-600 text-sm font-medium flex items-center">
                             <i class="fas fa-arrow-up mr-1"></i>
@@ -102,169 +102,8 @@
             </div>
         </div>
 
-        <!-- Top Products -->
+        <!-- Top 
 
-    </div>
-
-    <!-- Recent Orders Table -->
-    <div class="bg-white rounded-xl shadow-sm border border-gray-200 mb-8">
-        <div class="px-6 py-4 border-b border-gray-200">
-            <div class="flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-900">Recent Orders</h3>
-                    <p class="text-gray-600 text-sm">Latest customer orders and transactions</p>
-                </div>
-                <div class="flex space-x-3">
-                    <button
-                        class="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                        <i class="fas fa-download mr-2"></i>Export
-                    </button>
-                    <button
-                        class="px-4 py-2 bg-cordes-blue text-white rounded-lg hover:bg-cordes-dark transition-colors">
-                        <i class="fas fa-plus mr-2"></i>Add Order
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="overflow-x-auto">
-            <table class="w-full">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Order ID</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Customer</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Product</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Amount</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Status</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Date</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Actions</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="text-sm font-medium text-gray-900">#15847</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center">
-                                <img src="https://www.investopedia.com/thmb/NSwuyMYGVWCHVIi1AEoaPkdmMD0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Brand-loyalty_final-8ad57b86183e42348e18bc306c87778e.png"
-                                    alt="Customer" class="w-8 h-8 rounded-full mr-3">
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                    <div class="text-sm text-gray-500">john@example.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">iPhone 15 Pro</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">$1,299.00
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span
-                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
-                                Completed
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 22, 2025</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div class="flex space-x-2">
-                                <button class="text-cordes-blue hover:text-cordes-dark">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="text-gray-600 hover:text-gray-900">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="text-red-600 hover:text-red-900">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="text-sm font-medium text-gray-900">#15846</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center">
-                                <img src="https://www.investopedia.com/thmb/NSwuyMYGVWCHVIi1AEoaPkdmMD0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Brand-loyalty_final-8ad57b86183e42348e18bc306c87778e.png"
-                                    alt="Customer" class="w-8 h-8 rounded-full mr-3">
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">Sarah Wilson</div>
-                                    <div class="text-sm text-gray-500">sarah@example.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">MacBook Pro</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">$2,499.00
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span
-                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                                Pending
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 21, 2025</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div class="flex space-x-2">
-                                <button class="text-cordes-blue hover:text-cordes-dark">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="text-gray-600 hover:text-gray-900">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="text-red-600 hover:text-red-900">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="text-sm font-medium text-gray-900">#15845</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center">
-                                <img src="https://www.investopedia.com/thmb/NSwuyMYGVWCHVIi1AEoaPkdmMD0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Brand-loyalty_final-8ad57b86183e42348e18bc306c87778e.png"
-                                    alt="Customer" class="w-8 h-8 rounded-full mr-3">
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">Mike Johnson</div>
-                                    <div class="text-sm text-gray-500">mike@example.com</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">AirPods Pro</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">$249.00
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span
-                                class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">
-                                Cancelled
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 20, 2025</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div class="flex space-x-2">
-                                <button class="text-cordes-blue hover:text-cordes-dark">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="text-gray-600 hover:text-gray-900">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="text-red-600 hover:text-red-900">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </div>
 
     <!-- Bottom Row -->

@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot:heading>Expenses</x-slot:heading>
     <form action="/expenses/{{ $expense->id }}" method="POST">
         @csrf
         @method('PUT')

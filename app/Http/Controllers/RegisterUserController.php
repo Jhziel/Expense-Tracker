@@ -23,6 +23,6 @@ class RegisterUserController extends Controller
 
         User::create($validatedInput);
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

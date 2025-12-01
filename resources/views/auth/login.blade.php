@@ -7,14 +7,14 @@
                 </a>
             </div>
 
-            <form action="/register" method="POST">
+            <form action="/login" method="POST">
                 @csrf
                 <div class="space-y-6">
 
 
                     <div>
                         <x-form-label>Email</x-form-label>
-                        <x-form-input name="email" type="text" placeholder="Enter email" />
+                        <x-form-input name="email" type="text" placeholder="Enter email" :value="old('email')" />
                         <x-input-error :messages="$errors->get('email')" />
                     </div>
 
@@ -23,7 +23,6 @@
                         <x-form-input name="password" type="password" placeholder="Enter password" />
                         <x-input-error :messages="$errors->get('password')" />
                     </div>
-
 
                 </div>
 
@@ -35,6 +34,11 @@
                 </div>
 
             </form>
+            <p class="text-slate-600 text-sm mt-6 text-center">Don't have an account? <a href="/register"
+                    class="text-blue-600 font-medium hover:underline ml-1">Signup here</a>
+            </p>
         </div>
     </div>
+
+  
 </x-layout.guest-layout>

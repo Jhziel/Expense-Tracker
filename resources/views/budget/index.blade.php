@@ -1,66 +1,84 @@
 <x-layout>
+    <x-slot:heading>Budget</x-slot:heading>
 
-    <div class="flex justify-between items-center ">
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 mb-8">
+        <div class="px-6 py-4 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900">Your All Budget</h3>
+                    <p class="text-gray-600 text-sm">Latest customer orders and transactions</p>
+                </div>
+                <div class="flex space-x-3">
+                    <button
+                        class="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                        <i class="fas fa-download mr-2"></i>Export
+                    </button>
+                    <a href="/budgets/create"
+                        class="px-4 py-2 bg-cordes-blue text-white rounded-lg hover:bg-cordes-dark transition-colors">
+                        <i class="fas fa-plus mr-2"></i>Add Budget
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <h2 class="text-4xl font-bold my-4">This is your Budget</h2>
-        <a href="/budgets/create" class="py-2 px-2 bg-slate-900 text-white">Add new Budget</a>
-    </div>
-    <div class="relative overflow-x-auto bg-neutral-primary shadow-xs rounded-base border border-default">
-        <table class="w-full text-sm text-left rtl:text-right text-body">
-            <thead class="text-sm text-body border-b border-default">
-                <tr>
-                    <th scope="col" class="px-6 py-3 bg-neutral-secondary-soft font-medium">
-                        Source
-                    </th>
-                    <th scope="col" class="px-6 py-3 bg-neutral-secondary-soft font-medium">
-                        Owner
-                    </th>
-                    <th scope="col" class="px-6 py-3 font-medium">
-                        Amount
-                    </th>
-                    <th scope="col" class="px-6 py-3 bg-neutral-secondary-soft font-medium">
-                        Action
-                    </th>
-
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($budgets as $budget)
-                    <tr class="border-b border-default">
-                        <td scope="row"
-                            class="px-6 py-4 font-medium text-heading whitespace-nowrap bg-neutral-secondary-soft">
-                            {{ $budget->source }}
-                        </td>
-                        <td scope="row"
-                            class="px-6 py-4 font-medium text-heading whitespace-nowrap bg-neutral-secondary-soft">
-                            {{ $budget->user->name }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $budget->amount }}
-                        </td>
-                        <td class="px-6 py-4 bg-neutral-secondary-soft">
-                            <div class="flex gap-3">
-
-                                <a href="/budgets/{{ $budget->id }}/edit"
-                                    class="bg-blue-500 py-2 px-2 text-white">Edit</a>
-                                <form action="/budgets/{{ $budget->id }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-
-                                    <button type="submit"
-                                        class="bg-red-500 py-2 px-2 text-white cursor-pointer">delete</button>
-                                </form>
-                            </div>
-                        </td>
-
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Source</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Amount</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Date</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Actions</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    @foreach ($budgets as $budget)
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <img src="https://www.investopedia.com/thmb/NSwuyMYGVWCHVIi1AEoaPkdmMD0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Brand-loyalty_final-8ad57b86183e42348e18bc306c87778e.png"
+                                        alt="Customer" class="w-8 h-8 rounded-full mr-3">
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">{{ $budget->source }}</div>
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">
+                                {{ $budget->amount }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                {{ $budget->created_at->format('F d, Y') }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <div class="flex space-x-2">
+                                    <button class="text-cordes-blue hover:text-cordes-dark">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <a href="/budgets/{{ $budget->id }}/edit"
+                                        class="text-gray-600 hover:text-gray-900">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <button class="text-red-600 hover:text-red-900">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
+
+        </div>
     </div>
+
+
     <div class="mt-4">
         {{ $budgets->links() }}
     </div>
-
 
 </x-layout>

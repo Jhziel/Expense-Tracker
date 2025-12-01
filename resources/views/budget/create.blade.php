@@ -1,4 +1,5 @@
 <x-layout>
+      <x-slot:heading>Budget</x-slot:heading>
     <form action="/budgets" method="POST">
         @csrf
         <div class="my-2">

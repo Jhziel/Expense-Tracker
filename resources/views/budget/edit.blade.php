@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot:heading>Budget</x-slot:heading>
     Update Info
     <form action="/budgets/{{ $budget->id }}" method="POST">
         @csrf

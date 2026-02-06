@@ -21,10 +21,22 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
+            echo "== WHO AM I =="
+            whoami
+
+            echo "== CURRENT DIR =="
+            pwd
+            ls -la
+
+            echo "== GO TO APP PATH =="
             cd ${{ secrets.APP_PATH }}
-            git pull origin main
-            composer install --no-dev --optimize-autoloader
-            php artisan migrate --force
-            php artisan optimize
-            php artisan route:cache
-            php artisan config:cache
+
+            echo "== INSIDE APP PATH =="
+            pwd
+            ls -la
+
+            echo "== GIT STATUS =="
+            git status
+            echo "== LAST COMMITS =="
+            git log --oneline -5
+

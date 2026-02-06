@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot:heading>Dashboarder</x-slot:heading>
+    <x-slot:heading>Dashboarderssss</x-slot:heading>
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <!-- Revenue Card -->

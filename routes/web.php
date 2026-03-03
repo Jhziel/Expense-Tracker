@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DirectoryController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\LoginUserController;
 use App\Http\Controllers\RegisterUserController;
@@ -41,4 +42,6 @@ Route::middleware('guest')->group(function () {
     Route::post('/register', [RegisterUserController::class, 'store']);
     Route::get('/login', [LoginUserController::class, 'login'])->name('login');
     Route::post('/login', [LoginUserController::class, 'store']);
+
+    Route::get('/directory', [DirectoryController::class, 'index']);
 });
